@@ -88,8 +88,7 @@
 
   .sysname {
     font-size: 35px;
-    font-weight: bold;
-    color: #2b4b6b;
+    color: black;
     position: absolute;
     top: -80px;
     left: 80px;
