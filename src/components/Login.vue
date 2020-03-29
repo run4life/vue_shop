@@ -49,6 +49,7 @@
           if (res.meta.status !== 200) return this.$message.error('登录失败')
           this.$message.success('登录成功')
           window.sessionStorage.setItem('token', res.data.token)
+          window.sessionStorage.setItem('username', res.data.username)
           this.$router.push('/home')
         })
       }

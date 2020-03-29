@@ -4,7 +4,15 @@
       <div>
         <span>电商后台管理系统</span>
       </div>
-      <el-button type=info @click="logout" size=mini>退出</el-button>
+      <el-dropdown trigger="click">
+        <span class="el-dropdown-link, username">
+          {{username}}<i class="el-icon-arrow-down el-icon--right"></i>
+        </span>
+        <el-dropdown-menu slot="dropdown">
+          <el-dropdown-item icon="el-icon-user-solid">个人中心</el-dropdown-item>
+          <el-dropdown-item icon="el-icon-remove" @click.native="logout">退出</el-dropdown-item>
+        </el-dropdown-menu>
+      </el-dropdown>
     </el-header>
     <el-container>
       <el-aside :width="isCollapse ? '64px' : '200px'">
@@ -37,6 +45,7 @@
   export default {
     data() {
       return {
+        username: '',
         menulist: [],
         iconsObj: {
           125: 'iconfont icon-user',
@@ -52,6 +61,7 @@
     created() {
       this.getMenuList()
       this.activePath = window.sessionStorage.getItem('activePath')
+      this.username = window.sessionStorage.getItem('username')
     },
     methods: {
       logout() {
@@ -96,13 +106,18 @@
   .el-aside {
     background-color: #333744;
 
-    .el-menu {
+  .el-menu {
       border-right: none
     }
   }
 
   .el-main {
     background-color: #EAEDF1;
+  }
+
+  .username {
+    font-size: 16px;
+    color: #ffff
   }
 
   .iconfont {
