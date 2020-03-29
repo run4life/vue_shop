@@ -4,7 +4,7 @@
       <div>
         <span>电商后台管理系统</span>
       </div>
-      <el-dropdown trigger="click">
+      <el-dropdown>
         <span class="el-dropdown-link, username">
           {{username}}<i class="el-icon-arrow-down el-icon--right"></i>
         </span>
