@@ -147,7 +147,7 @@
             addRoles() {
                 this.$refs.addRoleFormRef.validate(async valid => {
                     if (!valid) return
-                    const { data: res } = await this.$http.post('roles/', this.addRoleForm)
+                    const { data: res } = await this.$http.post('roles', this.addRoleForm)
                     if (res.meta.status !== 201) {
                         this.$message.error('添加角色失败! ')
                     }

@@ -41,7 +41,7 @@
                 </el-table-column>
             </el-table>
             <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange"
-                :current-page="queryInfo.pagenum" :page-sizes="[2, 10, 20, 50, 100]" :page-size="queryInfo.pagesize"
+                :current-page="queryInfo.pagenum" :page-sizes="[10, 20, 50, 100]" :page-size="queryInfo.pagesize"
                 layout="total, sizes, prev, pager, next, jumper" :total="total">
             </el-pagination>
         </el-card>
@@ -127,7 +127,7 @@
                 queryInfo: {
                     query: '',
                     pagenum: 1,
-                    pagesize: 2
+                    pagesize: 10
                 },
                 userlist: [],
                 total: 0,
